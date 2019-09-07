@@ -1,24 +1,25 @@
 <?php 
 require_once 'controller/Diretorio.php'; 
-git ?>
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-<meta charset="UTF-8">
 <head>
 	<title>webFtp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div class="tudo">
+	<div id="app">
 		<h1>WebFTP</h1>
-		<form enctype="multipart/form-data" action="index.php" method="post">
-			Selecione o arquivo: <input name="arquivo" type="file" /></br>
-			<input type="submit" value="Enviar arquivo" name="btenviar" />
-
+		<form enctype="multipart/form-data" action="index.php" method="POST">
+			Selecione o arquivo: <input type="file" accept="image/*" name="btnFile"/></br>
+			<input type="submit" value="Enviar arquivo" name="btnSubmit" disabled/>
 			<?php 
-				$botao = filter_input(INPUT_POST, "btenviar");
+				$botao = filter_input(INPUT_POST, "btnSubmit");
 				if ($botao) {
-					$arquivo = $_FILES['arquivo'];
+					$arquivo = $_FILES['btnFile'];
 					$diretorio = new Diretorio('uploads/');
 					echo '</br>';
 					$diretorio->enviarArquivo($arquivo);
@@ -31,8 +32,8 @@ git ?>
 				}
 			?>
 		</form>
-
+		
 	</div>
-	
+	<script src="./js/app.js"></script>
 </body>
 </html>

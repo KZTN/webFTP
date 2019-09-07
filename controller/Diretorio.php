@@ -2,7 +2,7 @@
 	class Diretorio {
 		private $diretorio;
 
-		public function Diretorio($diretorio){
+		public function __construct($diretorio){
 			$this->diretorio = $diretorio;
 		}
 

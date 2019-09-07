@@ -4,7 +4,7 @@
 		private $nome;
 		private $idade;
 
-		public function Pessoa($idPessoa, $nome, $idade){
+		public function __construct($idPessoa, $nome, $idade){
 			$this->idPessoa = $idPessoa;
 			$this->nome = $nome;
 			$this->idade = $idade;
