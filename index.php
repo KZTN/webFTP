@@ -14,7 +14,7 @@ require_once 'controller/Diretorio.php';
 	<div id="app">
 		<h1>WebFTP</h1>
 		<form enctype="multipart/form-data" action="index.php" method="POST">
-			Selecione o arquivo: <input type="file" accept="image/*" name="btnFile"/></br>
+			Selecione o arquivo: <input type="file" accept="image/*"git  name="btnFile"/></br>
 			<input type="submit" value="Enviar arquivo" name="btnSubmit" disabled/>
 			<?php 
 				$botao = filter_input(INPUT_POST, "btnSubmit");

@@ -3,6 +3,9 @@
 		private $diretorio;
 
 		public function __construct($diretorio){
+			if(!is_dir($diretorio)) {
+				mkdir($diretorio, 0777, true);
+			}
 			$this->diretorio = $diretorio;
 		}
 
