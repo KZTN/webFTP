@@ -16,24 +16,26 @@ require_once 'controller/Diretorio.php';
 		<form enctype="multipart/form-data" action="index.php" method="POST">
 			Selecione o arquivo: <input type="file" accept="image/*"git  name="btnFile"/></br>
 			<input type="submit" value="Enviar arquivo" name="btnSubmit" disabled/>
+		</form>
+		<div class="files">
 			<?php 
+				$diretorio = new Diretorio('uploads/');
+				$diretorio->listararquivos();
 				$botao = filter_input(INPUT_POST, "btnSubmit");
 				if ($botao) {
 					$arquivo = $_FILES['btnFile'];
 					$diretorio = new Diretorio('uploads/');
 					echo '</br>';
 					$diretorio->enviarArquivo($arquivo);
-
 					echo '</br>';
 					echo '</br>';
-                    echo '</br>';
-
+                	echo '</br>';
 					$diretorio->listararquivos();
 				}
 			?>
-		</form>
-		
+		</div>
 	</div>
+
 	<script src="./js/app.js"></script>
 </body>
 </html>
