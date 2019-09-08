@@ -11,13 +11,12 @@
 		<h1>WebFTP</h1>
 		
 			<?php 
-				$urlarquivo = $_GET['arquivo'];
+				$urlarquivo = $_GET['file'];
 				
 				$diretorio = new Diretorio('uploads/');
 	
 				$diretorio->excluirArquivo($urlarquivo);
-				
-
+				header("Location: index.php"); 
 			?>
 		
 

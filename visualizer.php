@@ -11,11 +11,11 @@
 		<h1>WebFTP</h1>
 		
 			<?php 
-				$urlarquivo = $_GET['arquivo'];
-				
+				$urlarquivo = $_GET['arquivo'];	
 				$diretorio = new Diretorio('uploads/');
-	
-            echo("<img src=".$urlarquivo.">")
+            	echo("<img src=".$urlarquivo.">");
+				echo("<a href=download.php?file=".$urlarquivo.">Baixar</a>");
+				echo("<a href=excluir.php?file=".$urlarquivo.">Excluir</a>");
 
 			?>
 		

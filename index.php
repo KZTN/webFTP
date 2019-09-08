@@ -20,7 +20,6 @@ require_once 'controller/Diretorio.php';
 		<div class="files">
 			<?php 
 				$diretorio = new Diretorio('uploads/');
-				$diretorio->listararquivos();
 				$botao = filter_input(INPUT_POST, "btnSubmit");
 				if ($botao) {
 					$arquivo = $_FILES['btnFile'];
@@ -30,8 +29,8 @@ require_once 'controller/Diretorio.php';
 					echo '</br>';
 					echo '</br>';
                 	echo '</br>';
-					$diretorio->listararquivos();
 				}
+				$diretorio->listararquivos();
 			?>
 		</div>
 	</div>
